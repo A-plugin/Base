@@ -32,6 +32,20 @@ public final class PluginBase extends JavaPlugin {
         saveDefaultConfig();
     }
 
+    public void getData() {
+        title = config.getString("title.title.txt", "");
+        titleKo = config.getString("title.title.ko", "");
+        sub = config.getString("title.sub.txt", "");
+        subKo = config.getString("title.sub.ko", "");
+        jm = config.getString("join-message.join", "");
+        kojoin = config.getString("join.message.ko-join", "");
+        lm= config.getString("join-message.left","");
+        koleft=config.getString("join.message.ko-left", "");
+        header= config.getString("tab.header", "");
+        footer=config.getString("tab.footer", "");
+        chat=config.getString("chat.txt", "");
+    }
+
     @Override
     public void onDisable() {
         // Plugin shutdown logic

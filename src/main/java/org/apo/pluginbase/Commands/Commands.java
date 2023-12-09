@@ -29,6 +29,37 @@ public class Commands implements CommandExecutor {
                     Bukkit.setMotd(Objects.requireNonNull(config.getString("motd.txt")
                             .replace("&", "§")));
                     p.sendMessage(ChatColor.GREEN+"Base plugin reload success.");
+                } else if (args[0].equalsIgnoreCase("list")) {
+                    pb.getData();
+                    p.sendMessage(ChatColor.GREEN+"====BASE====\n" +
+                            ChatColor.BLUE+"title : "+ChatColor.WHITE+pb.title+
+                            ChatColor.BLUE+"\nsub title : "+ChatColor.WHITE+pb.sub+
+                            ChatColor.BLUE+"\njoinmessage : "+ChatColor.WHITE+pb.jm+
+                            ChatColor.BLUE+"\nleftmessage : "+ChatColor.WHITE+ pb.lm+
+                            ChatColor.BLUE+"\nChatting : "+ChatColor.WHITE+ pb.chat +
+                            ChatColor.BLUE+"\nmotd : "+ChatColor.WHITE+config.getString("motd.txt")+
+                            ChatColor.BLUE+"\nTab header : " +ChatColor.WHITE+ pb.header+
+                            ChatColor.BLUE+"\nTab footer : " +ChatColor.WHITE+ pb.footer+
+                            ChatColor.GREEN+"\n========="
+                    );
+                } else if (args[0].equalsIgnoreCase("motd")) {
+                    if (args.length>=1) {
+                        pb.getServer().setMotd(config.getString("motd.txt").replace("&", "§"));
+                        p.sendMessage(ChatColor.RED+"Motd Set");
+                    } else {
+                        pb.getConfig().set("motd.txt", args[1]);
+                        pb.getServer().setMotd(args[1].replace("&", "§"));
+                        p.sendMessage(ChatColor.GREEN+"Motd set"+args[1]);
+                        pb.saveConfig();
+                    }
+                } else if (args[0].equalsIgnoreCase("")) {
+                    
+                }
+            } else {
+                if (p.getLocale().startsWith("ko")) {
+                    p.sendMessage(ChatColor.RED+"당신은 권한을 가지고 있지 않습니다!");
+                } else {
+                    p.sendMessage(ChatColor.RED+"You don't have permission");
                 }
             }
         } else {
