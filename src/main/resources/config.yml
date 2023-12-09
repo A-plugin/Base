@@ -1,0 +1,37 @@
+title:
+  enable: false
+  title:
+    enable: true
+    ko: "&a환영!"
+    txt: "&awelcome"
+  sub:
+    enable: true
+    ko: "&b%player%"
+    txt: "&b%player%"
+
+join-message:
+  enable: true
+  ko-join: "&e%player% 이(가) 게임에 참여했습니다."
+  ko-left: "&e%player% 이(가) 게임을 나갔습니다."
+  join: "&e%player% joined the game"
+  left: "&e%player% left the game"
+  admin-join-log: true
+
+tab:
+  enable: false
+  header: "&aheader"
+  footer: "&efooter"
+
+motd:
+  enable: false
+  txt: "&7A Minecraft Server"
+
+chat:
+  enable: true
+  # [Chat] It can only be used here
+  txt: "<%player%> [chat]"
+  distance-chat: false
+  distance: 20
+
+perfix:
+  enable: false
