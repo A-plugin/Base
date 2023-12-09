@@ -32,6 +32,3 @@ chat:
   txt: "<%player%> [chat]"
   distance-chat: false
   distance: 20
-
-perfix:
-  enable: false
